@@ -15,61 +15,6 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::stri
     return size * nmemb;
 }
 
-/*std::string getWalletBal(std::string wallet_address) {
-    CURL *curl;
-    CURLcode res;
-    std::string readBuffer;
-
-    curl_global_init(CURL_GLOBAL_ALL);
-    curl = curl_easy_init();
-    
-    if(curl) {
-        // Set the URL for the request
-        curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:8899");
-
-        // Specify the POST data
-        std::string postData = R"({
-            "jsonrpc": "2.0",
-            "id": 1,
-            "method": "getBalance",
-            "params": [
-                "8wCUuBHDXatnMHLQqM5NRfkK9izifZ55pH5sX6eC8Woq"
-            ]
-        })";
-
-        // Set the POST data
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postData.c_str());
-
-        // Set the header
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        // Set up response handling
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-
-        // Perform the request, res will get the return code
-        res = curl_easy_perform(curl);
-
-        
-
-        // Check for errors
-        if(res != CURLE_OK)
-            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
-        else
-            std::cout << "Received: " << readBuffer << std::endl;
-           // balance = readBuffer;
-
-        // Cleanup
-        curl_slist_free_all(headers);
-        curl_easy_cleanup(curl);
-    }
-
-    curl_global_cleanup();
-
-    return readBuffer;
-}*/
 
 std::string getSolanaWalletBalance(const json& jsonData) {
     CURL* curl;
