@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.22)
-project(WESEX VERSION 1.0 DESCRIPTION "A Discord Bot")
+project(WESEX VERSION 1.0 DESCRIPTION "A Discord Bot" CXX)
+
+find_package(functions_framework_cpp REQUIRED)
+find_package(Threads)
+
+include(GNUInstallDirs)
+
 
 # Correctly append the path to your CMake module (FindDpp.cmake) here.
 # Assuming cmake is a directory at the root of your project.
@@ -24,7 +30,8 @@ set(JSON_DYLIB "/opt/homebrew/opt/nlohmann-json/")
 # Link the DPP library.
 target_link_libraries(${PROJECT_NAME} PRIVATE ${DPP_LIBRARIES}
   ${CURL_DYLIB} 
-  nlohmann_json::nlohmann_json)
+  nlohmann_json::nlohmann_json
+  functions-framework-cpp::framework)
 
 set(CURL_INCLUDE "/opt/homebrew/opt/curl/include/curl/")
 set(JSON_INCLUDE "/opt/homebrew/Cellar/nlohmann-json/3.11.3/include/nlohmann/")
