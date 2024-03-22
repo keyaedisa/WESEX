@@ -1,7 +1,7 @@
 {
-  "name": "WESEX",
-  "version-string": "unversioned",
-  "homepage": "https://github.com/GoogleCloudPlatform/cpp-samples/",
+  "name": "wesex",
+  "version-string": "1",
+  "homepage": "https://github.com/keyaedisa/WESEX",
   "description": [
     "Shows how to deploy a C++ application to Cloud Run."
   ],

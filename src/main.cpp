@@ -6,6 +6,8 @@
 #include <nlohmann/json.hpp>
 #include <functional>
 #include "main.h"
+#include <google/cloud/functions/framework.h>
+#include <cstdlib>
 
 
 using json = nlohmann::json;

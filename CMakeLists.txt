@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(WESEX VERSION 1.0 DESCRIPTION "A Discord Bot" CXX)
+project(wesex VERSION 1 DESCRIPTION "A Discord Bot" LANGUAGES CXX)
 
 find_package(functions_framework_cpp REQUIRED)
 find_package(Threads)
